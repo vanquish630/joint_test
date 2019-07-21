@@ -1,0 +1,128 @@
+<?xml version = "1.0" ?>
+<robot name="arm_mesh">
+
+
+<!--
+	<link name = "base">
+			<visual>
+				<origin rpy="0 0 0" xyz = "0 0 0"/>
+				<geometry>
+               		<cylinder radius="0.05" length="0.035"/>
+            	</geometry>
+        	</visual>
+
+    </link>
+
+
+    <joint name = "base_link1" type = "revolute">
+			<axis xyz= "0 0 1"/>
+			<limit effort="1000.0" lower="-3.14" upper="3.14" velocity="0.5" />
+        	<origin rpy="0 0 0" xyz="0 0 0.0175"/>
+        	<parent link="base"/>
+        	<child link="link1"/>
+    </joint>
+
+    
+-->
+    <link name = "link1">
+			<visual>
+				<origin rpy="0 0 0" xyz = "0 0 0.015"/>
+				<geometry>
+               		<cylinder radius="0.035" length="0.03"/>
+            	</geometry>
+        	</visual>
+
+           
+    </link>
+
+    <joint name = "link1_link2" type = "revolute">
+			<axis xyz= "0 1 0"/>
+			<limit effort="1000.0" lower="-1.57" upper="1.57" velocity="0.5" />
+        	<origin rpy="0 0 0" xyz="0 0 0.042"/>
+        	<parent link="link1"/>
+        	<child link="link2"/>
+        </joint>
+
+   
+
+    <link name = "link2">
+			<visual>
+				<origin rpy="0 0 0" xyz = "0 -0.02 0.05"/>
+				<geometry>
+               		<mesh filename="package://joint_test/meshes/link2.stl" scale = "0.001 0.001 0.001"/>
+            	</geometry>
+        	</visual>
+            
+    </link>
+
+
+    <joint name = "link2_link3" type = "revolute">
+			<axis xyz= "0 1 0"/>
+			<limit effort="1000.0" lower="-1.57" upper="1.57" velocity="0.5" />
+        	<origin rpy="0 0 0" xyz="0 0 0.095"/>
+        	<parent link="link2"/>
+        	<child link="link3"/>
+        </joint>
+
+    
+
+    <link name = "link3">
+			<visual>
+				<origin rpy="0 0 0" xyz = "-0.04 -0.045 0.03"/>
+				<geometry>
+               		<mesh filename="package://joint_test/meshes/link3.stl" scale = "0.001 0.001 0.001"/>
+            	</geometry>
+        	</visual>
+
+           
+    </link>
+
+    <joint name = "link3_link4" type = "revolute">
+			<axis xyz= "0 1 0"/>
+			<limit effort="1000.0" lower="-1.57" upper="1.57" velocity="0.5" />
+        	<origin rpy="0 0 0" xyz="0 0 0.09"/>
+        	<parent link="link3"/>
+        	<child link="link4"/>
+        </joint>
+
+    
+
+    <link name = "link4">
+			<visual>
+				<origin rpy="0 -1.57 1.57" xyz = "0.017 -0.0135 0.033"/>
+				<geometry>
+               		<mesh filename="package://joint_test/meshes/link4.stl" scale = "0.001 0.001 0.001"/>
+            	</geometry>
+        	</visual>
+
+           
+    </link>
+
+    <!--
+
+    <joint name = "link4_gripper_base" type = "revolute">
+			<axis xyz= "0 0 1"/>
+			<limit effort="1000.0" lower="-1.57" upper="1.57" velocity="0.5" />
+        	<origin rpy="0 0 0" xyz="-0.01 0 0.06"/>
+        	<parent link="link4"/>
+        	<child link="gripper_base"/>
+        </joint>
+
+   
+
+    <link name = "gripper_base">
+			<visual>
+				<origin rpy="0 0 3.14" xyz = "0.1 0.095 0"/>
+				<geometry>
+               		<mesh filename="package://joint_test/meshes/gripper_base.stl" scale = "0.001 0.001 0.001"/>
+            	</geometry>
+        	</visual>
+
+            
+    </link>
+
+ 
+-->
+   
+
+</robot>
